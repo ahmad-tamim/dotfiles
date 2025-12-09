@@ -382,7 +382,7 @@ MIT - Feel free to use and modify as you like.
 
 ## Author
 
-**Ahmad**
+**Ahmad Tamim**
 GitHub: [@ahmad-tamim](https://github.com/ahmad-tamim)
 
 ---
