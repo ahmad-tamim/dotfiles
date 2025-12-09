@@ -1,0 +1,113 @@
+{
+  "Interface": {
+    "prefix": "int",
+    "body": ["interface ${1:Name} {", "  ${2:key}: ${3:type}", "  $0", "}"],
+    "description": "TypeScript interface"
+  },
+
+  "Type": {
+    "prefix": "typ",
+    "body": "type ${1:Name} = ${2:type}",
+    "description": "Type alias"
+  },
+
+  "Enum": {
+    "prefix": "enum",
+    "body": ["enum ${1:Name} {", "  ${2:Value} = '${3:value}'", "  $0", "}"],
+    "description": "Enum"
+  },
+
+  "Typed Function": {
+    "prefix": "tfn",
+    "body": [
+      "function ${1:name}(${2:param}: ${3:type}): ${4:ReturnType} {",
+      "  $0",
+      "}"
+    ],
+    "description": "Typed function"
+  },
+
+  "Typed Arrow Function": {
+    "prefix": "taf",
+    "body": "const ${1:name} = (${2:param}: ${3:type}): ${4:ReturnType} => {$5}",
+    "description": "Typed arrow function"
+  },
+
+  "Async Typed Function": {
+    "prefix": "tafn",
+    "body": [
+      "async function ${1:name}(${2:param}: ${3:type}): Promise<${4:Type}> {",
+      "  $0",
+      "}"
+    ],
+    "description": "Async typed function"
+  },
+
+  "Generic Function": {
+    "prefix": "gfn",
+    "body": [
+      "function ${1:name}<T>(${2:param}: T): ${3:ReturnType} {",
+      "  $0",
+      "}"
+    ],
+    "description": "Generic function"
+  },
+
+  "Class": {
+    "prefix": "cls",
+    "body": [
+      "class ${1:Name} {",
+      "  constructor(${2:params}) {",
+      "    $3",
+      "  }",
+      "  ",
+      "  ${4:method}() {",
+      "    $0",
+      "  }",
+      "}"
+    ],
+    "description": "TypeScript class"
+  },
+
+  "Class with Props": {
+    "prefix": "clsp",
+    "body": [
+      "class ${1:Name} {",
+      "  private ${2:prop}: ${3:type}",
+      "  ",
+      "  constructor(${2:prop}: ${3:type}) {",
+      "    this.${2:prop} = ${2:prop}",
+      "  }",
+      "  ",
+      "  ${4:method}(): ${5:void} {",
+      "    $0",
+      "  }",
+      "}"
+    ],
+    "description": "Class with properties"
+  },
+
+  "Import Type": {
+    "prefix": "impt",
+    "body": "import type { ${2:Type} } from '${1:path}'",
+    "description": "Import type"
+  },
+
+  "Export Type": {
+    "prefix": "expt",
+    "body": "export type { ${1:Type} }",
+    "description": "Export type"
+  },
+
+  "As Const": {
+    "prefix": "asc",
+    "body": "as const",
+    "description": "As const assertion"
+  },
+
+  "Satisfies": {
+    "prefix": "sat",
+    "body": "satisfies ${1:Type}",
+    "description": "Satisfies operator"
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "Console Log": {
+    "prefix": "cl",
+    "body": "console.log($1)",
+    "description": "Console log"
+  },
+
+  "Console Log Variable": {
+    "prefix": "clv",
+    "body": "console.log('${1:var}:', ${1:var})",
+    "description": "Console log with variable name"
+  },
+
+  "Arrow Function": {
+    "prefix": "af",
+    "body": "const ${1:name} = (${2:params}) => {$3}",
+    "description": "Arrow function"
+  },
+
+  "Async Arrow Function": {
+    "prefix": "aaf",
+    "body": "const ${1:name} = async (${2:params}) => {$3}",
+    "description": "Async arrow function"
+  },
+
+  "Function": {
+    "prefix": "fn",
+    "body": ["function ${1:name}(${2:params}) {", "  $0", "}"],
+    "description": "Regular function"
+  },
+
+  "Async Function": {
+    "prefix": "afn",
+    "body": ["async function ${1:name}(${2:params}) {", "  $0", "}"],
+    "description": "Async function"
+  },
+
+  "Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "  $1",
+      "} catch (error) {",
+      "  console.error('${2:Error}:', error)",
+      "  $0",
+      "}"
+    ],
+    "description": "Try-catch block"
+  },
+
+  "Import": {
+    "prefix": "imp",
+    "body": "import ${2:module} from '${1:path}'",
+    "description": "Import statement"
+  },
+
+  "Import Destructure": {
+    "prefix": "imd",
+    "body": "import { ${2:exports} } from '${1:path}'",
+    "description": "Import with destructuring"
+  },
+
+  "Export Default": {
+    "prefix": "exp",
+    "body": "export default ${1:name}",
+    "description": "Export default"
+  },
+
+  "Export Named": {
+    "prefix": "exn",
+    "body": "export { ${1:name} }",
+    "description": "Named export"
+  },
+
+  "Promise": {
+    "prefix": "prom",
+    "body": ["new Promise((resolve, reject) => {", "  $0", "})"],
+    "description": "Promise"
+  },
+
+  "Fetch API": {
+    "prefix": "fetch",
+    "body": [
+      "const response = await fetch('${1:url}')",
+      "const data = await response.json()",
+      "$0"
+    ],
+    "description": "Fetch API call"
+  },
+
+  "Fetch POST": {
+    "prefix": "fetchpost",
+    "body": [
+      "const response = await fetch('${1:url}', {",
+      "  method: 'POST',",
+      "  headers: { 'Content-Type': 'application/json' },",
+      "  body: JSON.stringify(${2:data})",
+      "})",
+      "const result = await response.json()",
+      "$0"
+    ],
+    "description": "POST fetch request"
+  },
+
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:i} = 0; ${1:i} < ${2:array}.length; ${1:i}++) {",
+      "  $0",
+      "}"
+    ],
+    "description": "For loop"
+  },
+
+  "For Of": {
+    "prefix": "forof",
+    "body": ["for (const ${1:item} of ${2:array}) {", "  $0", "}"],
+    "description": "For...of loop"
+  },
+
+  "For Each": {
+    "prefix": "foreach",
+    "body": "${1:array}.forEach((${2:item}) => {$3})",
+    "description": "Array forEach"
+  },
+
+  "Map": {
+    "prefix": "map",
+    "body": "${1:array}.map((${2:item}) => $3)",
+    "description": "Array map"
+  },
+
+  "Filter": {
+    "prefix": "filter",
+    "body": "${1:array}.filter((${2:item}) => $3)",
+    "description": "Array filter"
+  },
+
+  "Reduce": {
+    "prefix": "reduce",
+    "body": "${1:array}.reduce((${2:acc}, ${3:item}) => $4, ${5:initial})",
+    "description": "Array reduce"
+  },
+
+  "SetTimeout": {
+    "prefix": "st",
+    "body": ["setTimeout(() => {", "  $2", "}, ${1:1000})"],
+    "description": "setTimeout"
+  },
+
+  "SetInterval": {
+    "prefix": "si",
+    "body": ["setInterval(() => {", "  $2", "}, ${1:1000})"],
+    "description": "setInterval"
+  },
+
+  "Object Destructure": {
+    "prefix": "dob",
+    "body": "const { ${2:properties} } = ${1:object}",
+    "description": "Object destructuring"
+  },
+
+  "Array Destructure": {
+    "prefix": "dar",
+    "body": "const [${2:items}] = ${1:array}",
+    "description": "Array destructuring"
+  },
+
+  "Spread Object": {
+    "prefix": "spr",
+    "body": "{ ...${1:object} }",
+    "description": "Spread object"
+  },
+
+  "Ternary": {
+    "prefix": "ter",
+    "body": "${1:condition} ? ${2:true} : ${3:false}",
+    "description": "Ternary operator"
+  },
+
+  "Optional Chaining": {
+    "prefix": "oc",
+    "body": "${1:object}?.${2:property}",
+    "description": "Optional chaining"
+  },
+
+  "Nullish Coalescing": {
+    "prefix": "nc",
+    "body": "${1:value} ?? ${2:default}",
+    "description": "Nullish coalescing operator"
+  },
+
+  "Template Literal": {
+    "prefix": "tl",
+    "body": "`${${1:expression}}`",
+    "description": "Template literal"
+  },
+
+  "Object Method": {
+    "prefix": "om",
+    "body": ["${1:method}(${2:params}) {", "  $0", "}"],
+    "description": "Object method"
+  },
+
+  "Find": {
+    "prefix": "find",
+    "body": "${1:array}.find((${2:item}) => $3)",
+    "description": "Array find"
+  },
+
+  "Some": {
+    "prefix": "some",
+    "body": "${1:array}.some((${2:item}) => $3)",
+    "description": "Array some"
+  },
+
+  "Every": {
+    "prefix": "every",
+    "body": "${1:array}.every((${2:item}) => $3)",
+    "description": "Array every"
+  },
+
+  "Sort": {
+    "prefix": "sort",
+    "body": "${1:array}.sort((a, b) => ${2:a - b})",
+    "description": "Array sort"
+  },
+
+  "Async Await": {
+    "prefix": "aw",
+    "body": "await ${1:promise}",
+    "description": "Await expression"
+  },
+
+  "Fetch with Try Catch": {
+    "prefix": "fetcht",
+    "body": [
+      "try {",
+      "  const response = await fetch('${1:url}')",
+      "  if (!response.ok) throw new Error('Request failed')",
+      "  const data = await response.json()",
+      "  $0",
+      "} catch (error) {",
+      "  console.error('${2:Error}:', error)",
+      "}"
+    ],
+    "description": "Fetch with error handling"
+  },
+
+  "Object Keys": {
+    "prefix": "ok",
+    "body": "Object.keys(${1:object})",
+    "description": "Object.keys()"
+  },
+
+  "Object Values": {
+    "prefix": "ov",
+    "body": "Object.values(${1:object})",
+    "description": "Object.values()"
+  },
+
+  "Object Entries": {
+    "prefix": "oe",
+    "body": "Object.entries(${1:object})",
+    "description": "Object.entries()"
+  },
+
+  "JSON Parse": {
+    "prefix": "jp",
+    "body": "JSON.parse(${1:string})",
+    "description": "JSON.parse()"
+  },
+
+  "JSON Stringify": {
+    "prefix": "js",
+    "body": "JSON.stringify(${1:object}, null, 2)",
+    "description": "JSON.stringify()"
+  },
+
+  "LocalStorage Get": {
+    "prefix": "lsg",
+    "body": "localStorage.getItem('${1:key}')",
+    "description": "localStorage.getItem()"
+  },
+
+  "LocalStorage Set": {
+    "prefix": "lss",
+    "body": "localStorage.setItem('${1:key}', ${2:value})",
+    "description": "localStorage.setItem()"
+  },
+
+  "Async IIFE": {
+    "prefix": "iife",
+    "body": [
+      "(async () => {",
+      "  $0",
+      "})()"
+    ],
+    "description": "Async IIFE"
+  }
+}

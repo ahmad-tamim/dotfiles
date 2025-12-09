@@ -1,0 +1,192 @@
+[user]
+  name = Ahmad
+  email = your-email@example.com
+  # GitHub username for easier collaboration
+  username = ahmad-tamim
+
+[core]
+  # Default editor for commit messages
+  editor = code --wait
+
+  # Line endings: LF on commit, auto on checkout
+  autocrlf = input
+
+  # Ignore file permissions changes
+  filemode = false
+
+  # Use less with colors for pager
+  pager = less -R
+
+  # Global gitignore
+  excludesfile = ~/.gitignore_global
+
+[init]
+  # Default branch name for new repos
+  defaultBranch = main
+
+[pull]
+  # Rebase instead of merge on pull
+  rebase = true
+
+[push]
+  # Push current branch to remote with same name
+  default = current
+
+  # Push tags automatically
+  followTags = true
+
+[fetch]
+  # Remove deleted remote branches
+  prune = true
+
+[merge]
+  # Show common ancestor in merge conflicts
+  conflictstyle = diff3
+
+  # Use VS Code as merge tool
+  tool = vscode
+
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+
+[diff]
+  # Use VS Code as diff tool
+  tool = vscode
+
+  # Better diff algorithm
+  algorithm = histogram
+
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[color]
+  # Enable colors in output
+  ui = auto
+
+[color "branch"]
+  current = yellow bold
+  local = green
+  remote = cyan
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  untracked = red bold
+
+[alias]
+  # Status shortcuts
+  s = status
+  st = status -sb
+
+  # Add shortcuts
+  a = add
+  aa = add --all
+
+  # Commit shortcuts
+  c = commit -m
+  ca = commit --amend
+  can = commit --amend --no-edit
+
+  # Push/Pull
+  p = push
+  pf = push --force-with-lease
+  pl = pull
+
+  # Branch management
+  b = branch
+  ba = branch -a
+  bd = branch -d
+  bdf = branch -D
+
+  # Checkout
+  co = checkout
+  cob = checkout -b
+
+  # Log shortcuts
+  l = log --oneline -10
+  ll = log --oneline -20
+  lg = log --graph --oneline --decorate --all -20
+  last = log -1 HEAD --stat
+
+  # Diff shortcuts
+  d = diff
+  dc = diff --cached
+  ds = diff --stat
+
+  # Stash shortcuts
+  save = stash save
+  pop = stash pop
+  list = stash list
+
+  # Undo shortcuts
+  undo = reset HEAD~1 --soft
+  unstage = reset HEAD --
+  discard = checkout --
+
+  # Show last commit
+  show-last = show HEAD
+
+  # Aliases for common workflows
+  sync = !git pull && git push
+  update = !git fetch --all && git pull
+  clean-branches = !git branch --merged | grep -v '\\*\\|main\\|master' | xargs -n 1 git branch -d
+
+  # Quick commit and push
+  quick = !git add -A && git commit -m \"Quick update: $(date)\" && git push
+
+  # Prettier log
+  hist = log --pretty=format:'%C(yellow)%h%C(reset) - %C(cyan)%an%C(reset), %C(green)%ar%C(reset) : %s' --graph --abbrev-commit --decorate
+
+  # Show contributors
+  contributors = shortlog -sn
+
+  # Ignore file locally (won't affect .gitignore)
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
+
+[rerere]
+  # Remember resolved conflicts
+  enabled = true
+
+[help]
+  # Autocorrect typos after 1 second
+  autocorrect = 10
+
+[credential]
+  # Cache credentials for 1 hour
+  helper = cache --timeout=3600
+
+[filter "lfs"]
+  # Git LFS settings
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+# GitHub-specific settings
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
+# Performance improvements
+[feature]
+  manyFiles = true
+
+[index]
+  threads = true
+
+# Security
+[transfer]
+  fsckobjects = true
+
+[receive]
+  fsckObjects = true
+
+[fetch]
+  fsckobjects = false

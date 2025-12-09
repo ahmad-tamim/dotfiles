@@ -1,0 +1,227 @@
+{
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "export function ${1:Component}({ ${2:props} }) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "React functional component"
+  },
+
+  "React FC with Props": {
+    "prefix": "rfcp",
+    "body": [
+      "export function ${1:Component}({ ${2:prop1}, ${3:prop2} }) {",
+      "  return (",
+      "    <div>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "React component with props"
+  },
+
+  "React FC with Children": {
+    "prefix": "rfcc",
+    "body": [
+      "export function ${1:Component}({ children, ${2:props} }) {",
+      "  return (",
+      "    <div>",
+      "      {children}",
+      "    </div>",
+      "  )",
+      "}"
+    ],
+    "description": "React component with children"
+  },
+
+  "useState": {
+    "prefix": "us",
+    "body": "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState($2)",
+    "description": "useState hook"
+  },
+
+  "useEffect": {
+    "prefix": "ue",
+    "body": ["useEffect(() => {", "  $1", "}, [$2])"],
+    "description": "useEffect hook"
+  },
+
+  "useEffect with Cleanup": {
+    "prefix": "uec",
+    "body": [
+      "useEffect(() => {",
+      "  $1",
+      "  ",
+      "  return () => {",
+      "    $2",
+      "  }",
+      "}, [$3])"
+    ],
+    "description": "useEffect with cleanup"
+  },
+
+  "useRef": {
+    "prefix": "ur",
+    "body": "const ${1:ref} = useRef(null)",
+    "description": "useRef hook"
+  },
+
+  "useCallback": {
+    "prefix": "ucb",
+    "body": ["const ${1:callback} = useCallback(() => {", "  $2", "}, [$3])"],
+    "description": "useCallback hook"
+  },
+
+  "useMemo": {
+    "prefix": "um",
+    "body": [
+      "const ${1:memoized} = useMemo(() => {",
+      "  return $2",
+      "}, [$3])"
+    ],
+    "description": "useMemo hook"
+  },
+
+  "useContext": {
+    "prefix": "uc",
+    "body": "const ${1:context} = useContext(${2:Context})",
+    "description": "useContext hook"
+  },
+
+  "useReducer": {
+    "prefix": "ured",
+    "body": [
+      "const [${1:state}, ${2:dispatch}] = useReducer(",
+      "  ${3:reducer},",
+      "  ${4:initialState}",
+      ")"
+    ],
+    "description": "useReducer hook"
+  },
+
+  "Custom Hook": {
+    "prefix": "uch",
+    "body": [
+      "export function use${1:Name}() {",
+      "  $2",
+      "  ",
+      "  return $0",
+      "}"
+    ],
+    "description": "Custom React hook"
+  },
+
+  "Event Handler": {
+    "prefix": "eh",
+    "body": "const handle${1:Click} = (e) => {$2}",
+    "description": "Event handler"
+  },
+
+  "Async Event Handler": {
+    "prefix": "aeh",
+    "body": [
+      "const handle${1:Submit} = async (e) => {",
+      "  e.preventDefault()",
+      "  try {",
+      "    $2",
+      "  } catch (error) {",
+      "    console.error(error)",
+      "  }",
+      "}"
+    ],
+    "description": "Async event handler"
+  },
+
+  "React Context": {
+    "prefix": "rctx",
+    "body": [
+      "import { createContext, useContext } from 'react'",
+      "",
+      "const ${1:Name}Context = createContext()",
+      "",
+      "export function ${1:Name}Provider({ children, ${2:value} }) {",
+      "  return (",
+      "    <${1:Name}Context.Provider value={{ ${2:value} }}>",
+      "      {children}",
+      "    </${1:Name}Context.Provider>",
+      "  )",
+      "}",
+      "",
+      "export function use${1:Name}() {",
+      "  const context = useContext(${1:Name}Context)",
+      "  if (!context) {",
+      "    throw new Error('use${1:Name} must be used within ${1:Name}Provider')",
+      "  }",
+      "  return context",
+      "}"
+    ],
+    "description": "React Context with Provider and Hook"
+  },
+
+  "Console Log": {
+    "prefix": "cl",
+    "body": "console.log($1)",
+    "description": "Console log"
+  },
+
+  "Console Log Variable": {
+    "prefix": "clv",
+    "body": "console.log('${1:var}:', ${1:var})",
+    "description": "Console log with variable name"
+  },
+
+  "Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "  $1",
+      "} catch (error) {",
+      "  console.error('${2:Error}:', error)",
+      "}"
+    ],
+    "description": "Try-catch block"
+  },
+
+  "Import": {
+    "prefix": "imp",
+    "body": "import ${2:module} from '${1:path}'",
+    "description": "Import statement"
+  },
+
+  "Import Destructure": {
+    "prefix": "imd",
+    "body": "import { ${2:exports} } from '${1:path}'",
+    "description": "Import with destructuring"
+  },
+
+  "Import React": {
+    "prefix": "imr",
+    "body": "import React from 'react'",
+    "description": "Import React"
+  },
+
+  "Import useState": {
+    "prefix": "imus",
+    "body": "import { useState } from 'react'",
+    "description": "Import useState"
+  },
+
+  "Import useEffect": {
+    "prefix": "imue",
+    "body": "import { useEffect } from 'react'",
+    "description": "Import useEffect"
+  },
+
+  "Export Default": {
+    "prefix": "exp",
+    "body": "export default ${1:name}",
+    "description": "Export default"
+  }
+}

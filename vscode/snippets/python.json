@@ -1,0 +1,257 @@
+{
+  "Function": {
+    "prefix": "def",
+    "body": ["def ${1:function_name}(${2:params}):", "    ${3:pass}"],
+    "description": "Function definition"
+  },
+
+  "Async Function": {
+    "prefix": "adef",
+    "body": ["async def ${1:function_name}(${2:params}):", "    ${3:pass}"],
+    "description": "Async function"
+  },
+
+  "Function with Type Hints": {
+    "prefix": "deft",
+    "body": [
+      "def ${1:function_name}(${2:param}: ${3:type}) -> ${4:ReturnType}:",
+      "    ${5:pass}"
+    ],
+    "description": "Function with type hints"
+  },
+
+  "Class": {
+    "prefix": "cls",
+    "body": [
+      "class ${1:ClassName}:",
+      "    def __init__(self, ${2:params}):",
+      "        ${3:pass}",
+      "    ",
+      "    def ${4:method}(self):",
+      "        ${5:pass}"
+    ],
+    "description": "Class definition"
+  },
+
+  "Dataclass": {
+    "prefix": "dcls",
+    "body": [
+      "from dataclasses import dataclass",
+      "",
+      "@dataclass",
+      "class ${1:ClassName}:",
+      "    ${2:field}: ${3:type}",
+      "    $0"
+    ],
+    "description": "Dataclass"
+  },
+
+  "If Main": {
+    "prefix": "main",
+    "body": ["if __name__ == '__main__':", "    ${1:main()}"],
+    "description": "If main guard"
+  },
+
+  "Try Except": {
+    "prefix": "try",
+    "body": [
+      "try:",
+      "    ${1:pass}",
+      "except ${2:Exception} as e:",
+      "    logger.error(f'${3:Error}: {e}')",
+      "    ${4:pass}"
+    ],
+    "description": "Try-except block"
+  },
+
+  "Try Except Finally": {
+    "prefix": "tryf",
+    "body": [
+      "try:",
+      "    ${1:pass}",
+      "except ${2:Exception} as e:",
+      "    logger.error(f'${3:Error}: {e}')",
+      "finally:",
+      "    ${4:pass}"
+    ],
+    "description": "Try-except-finally"
+  },
+
+  "With Statement": {
+    "prefix": "with",
+    "body": ["with ${1:expression} as ${2:variable}:", "    ${3:pass}"],
+    "description": "With statement"
+  },
+
+  "List Comprehension": {
+    "prefix": "lc",
+    "body": "[${1:expression} for ${2:item} in ${3:iterable}]",
+    "description": "List comprehension"
+  },
+
+  "Dict Comprehension": {
+    "prefix": "dc",
+    "body": "{${1:key}: ${2:value} for ${3:item} in ${4:iterable}}",
+    "description": "Dict comprehension"
+  },
+
+  "Lambda": {
+    "prefix": "lam",
+    "body": "lambda ${1:params}: ${2:expression}",
+    "description": "Lambda function"
+  },
+
+  "Print": {
+    "prefix": "p",
+    "body": "print(${1:value})",
+    "description": "Print statement"
+  },
+
+  "Print F-string": {
+    "prefix": "pf",
+    "body": "print(f'${1:text}: {${2:variable}}')",
+    "description": "Print with f-string"
+  },
+
+  "FastAPI Route": {
+    "prefix": "fapi",
+    "body": [
+      "@app.${1|get,post,put,delete,patch|}('/${2:endpoint}')",
+      "async def ${3:function_name}(${4:params}):",
+      "    ${5:pass}",
+      "    return {'status': 'success'}"
+    ],
+    "description": "FastAPI route"
+  },
+
+  "FastAPI Route with Response": {
+    "prefix": "fapir",
+    "body": [
+      "@app.${1|get,post,put,delete|}('/${2:endpoint}', response_model=${3:ResponseModel})",
+      "async def ${4:function_name}(${5:params}):",
+      "    ${6:pass}",
+      "    return ${7:response}"
+    ],
+    "description": "FastAPI route with response model"
+  },
+
+  "Pydantic Model": {
+    "prefix": "pyd",
+    "body": [
+      "class ${1:ModelName}(BaseModel):",
+      "    ${2:field}: ${3:str}",
+      "    $0"
+    ],
+    "description": "Pydantic model"
+  },
+
+  "Pydantic Model with Validator": {
+    "prefix": "pydv",
+    "body": [
+      "class ${1:ModelName}(BaseModel):",
+      "    ${2:field}: ${3:str}",
+      "    ",
+      "    @field_validator('${2:field}')",
+      "    @classmethod",
+      "    def validate_${2:field}(cls, v):",
+      "        ${4:pass}",
+      "        return v"
+    ],
+    "description": "Pydantic model with validator"
+  },
+
+  "Import": {
+    "prefix": "imp",
+    "body": "import ${1:module}",
+    "description": "Import statement"
+  },
+
+  "From Import": {
+    "prefix": "from",
+    "body": "from ${1:module} import ${2:name}",
+    "description": "From import"
+  },
+
+  "For Loop": {
+    "prefix": "for",
+    "body": ["for ${1:item} in ${2:iterable}:", "    ${3:pass}"],
+    "description": "For loop"
+  },
+
+  "For Enumerate": {
+    "prefix": "fore",
+    "body": [
+      "for ${1:i}, ${2:item} in enumerate(${3:iterable}):",
+      "    ${4:pass}"
+    ],
+    "description": "For loop with enumerate"
+  },
+
+  "While Loop": {
+    "prefix": "while",
+    "body": ["while ${1:condition}:", "    ${2:pass}"],
+    "description": "While loop"
+  },
+
+  "Property": {
+    "prefix": "prop",
+    "body": [
+      "@property",
+      "def ${1:property_name}(self):",
+      "    return self._${1:property_name}",
+      "",
+      "@${1:property_name}.setter",
+      "def ${1:property_name}(self, value):",
+      "    self._${1:property_name} = value"
+    ],
+    "description": "Property decorator"
+  },
+
+  "Static Method": {
+    "prefix": "sm",
+    "body": [
+      "@staticmethod",
+      "def ${1:method_name}(${2:params}):",
+      "    ${3:pass}"
+    ],
+    "description": "Static method"
+  },
+
+  "Class Method": {
+    "prefix": "cm",
+    "body": [
+      "@classmethod",
+      "def ${1:method_name}(cls, ${2:params}):",
+      "    ${3:pass}"
+    ],
+    "description": "Class method"
+  },
+
+  "Docstring": {
+    "prefix": "doc",
+    "body": [
+      "\"\"\"",
+      "${1:Description}",
+      "",
+      "Args:",
+      "    ${2:param}: ${3:description}",
+      "",
+      "Returns:",
+      "    ${4:description}",
+      "\"\"\""
+    ],
+    "description": "Google-style docstring"
+  },
+
+  "Type Alias": {
+    "prefix": "ta",
+    "body": "${1:AliasName} = ${2:type}",
+    "description": "Type alias"
+  },
+
+  "Async With": {
+    "prefix": "awith",
+    "body": ["async with ${1:expression} as ${2:variable}:", "    ${3:pass}"],
+    "description": "Async with statement"
+  }
+}
