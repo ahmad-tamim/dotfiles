@@ -30,26 +30,31 @@ dotfiles/
 ### 1. Install Prerequisites
 
 #### Homebrew (if not installed)
+
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 #### Modern CLI Tools
+
 ```bash
 brew install eza bat fd ripgrep zoxide
 ```
 
 #### Oh My Zsh
+
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 #### Powerlevel10k Theme
+
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 #### Fonts (JetBrains Mono Nerd Font)
+
 ```bash
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono-nerd-font
@@ -74,6 +79,7 @@ chmod +x setup.sh
 The setup script automatically symlinks VSCode configs. Just restart VSCode to apply changes.
 
 #### Required Extensions
+
 Install these VSCode extensions for the best experience:
 
 ```bash
@@ -95,6 +101,7 @@ code --install-extension GitHub.copilot
 ```
 
 Or install all at once:
+
 ```bash
 cd ~/dotfiles
 cat << 'EOF' | while read ext; do code --install-extension $ext; done
@@ -153,6 +160,7 @@ Open these files whenever you need to remember shortcuts or commands:
 ## Daily Workflow Examples
 
 ### Starting a New Feature
+
 ```bash
 # Terminal
 gco main              # Switch to main
@@ -171,6 +179,7 @@ gp                    # Push
 ```
 
 ### Quick Docker Setup
+
 ```bash
 dcb                   # Build and start containers
 dcl                   # Watch logs
@@ -180,6 +189,7 @@ dcd                   # Stop everything
 ```
 
 ### Python Project
+
 ```bash
 venv                  # Create virtual environment
 activate              # Activate it
@@ -190,6 +200,7 @@ p3 app.py            # Run app
 ## Updating Your Configs
 
 ### Update Dotfiles Repository
+
 When you make changes to your configs and want to update the repo:
 
 ```bash
@@ -201,6 +212,7 @@ gp
 ```
 
 ### Update from Repository
+
 When you want to pull latest dotfiles changes:
 
 ```bash
@@ -240,6 +252,7 @@ source ~/.zshrc
 ## Scripts Reference
 
 ### setup.sh
+
 Creates symlinks from dotfiles to actual config locations. Safe to run multiple times.
 
 ```bash
@@ -247,12 +260,14 @@ Creates symlinks from dotfiles to actual config locations. Safe to run multiple 
 ```
 
 **What it does**:
+
 - Links VSCode settings → `~/Library/Application Support/Code/User/`
 - Links `.zshrc` → `~/.zshrc`
 - Links `.gitconfig` → `~/.gitconfig`
 - Links `.gitignore_global` → `~/.gitignore_global`
 
 ### update.sh
+
 Copies current configs back to dotfiles directory.
 
 ```bash
@@ -260,6 +275,7 @@ Copies current configs back to dotfiles directory.
 ```
 
 **What it does**:
+
 - Copies VSCode configs from `~/Library/Application Support/Code/User/`
 - Copies `.zshrc` from `~/.zshrc`
 - Copies git configs from home directory
@@ -268,6 +284,7 @@ Copies current configs back to dotfiles directory.
 ## Troubleshooting
 
 ### VSCode settings not applying
+
 ```bash
 # Check if symlink exists
 ls -la ~/Library/Application\ Support/Code/User/settings.json
@@ -280,6 +297,7 @@ cd ~/dotfiles
 ```
 
 ### Terminal aliases not working
+
 ```bash
 # Reload zsh config
 source ~/.zshrc
@@ -293,6 +311,7 @@ cd ~/dotfiles
 ```
 
 ### Modern tools (eza, bat, etc.) not found
+
 ```bash
 # Install missing tools
 brew install eza bat fd ripgrep zoxide
@@ -302,6 +321,7 @@ source ~/.zshrc
 ```
 
 ### Git config not applying
+
 ```bash
 # Check git config
 git config --list
@@ -314,6 +334,7 @@ cd ~/dotfiles
 ## Tips & Tricks
 
 ### Keyboard Shortcuts (Most Used)
+
 - `Cmd+P` - Quick file open
 - `Cmd+Shift+P` - Command palette
 - `Cmd+D` - Multi-cursor select next
@@ -322,6 +343,7 @@ cd ~/dotfiles
 - `F2` - Rename symbol
 
 ### Terminal Power Moves
+
 ```bash
 z project          # Jump to project directory (zoxide)
 ll                 # Beautiful file list with git status
@@ -330,6 +352,7 @@ dcb               # Build and run docker containers
 ```
 
 ### Snippet Shortcuts
+
 - `rfc` → React functional component
 - `us` → useState hook
 - `ue` → useEffect hook
@@ -348,6 +371,7 @@ dcb               # Build and run docker containers
 ## Contributing
 
 This is a personal dotfiles repository, but feel free to:
+
 - Fork it and customize for your own use
 - Open issues for bugs or suggestions
 - Submit PRs for improvements
@@ -359,11 +383,12 @@ MIT - Feel free to use and modify as you like.
 ## Author
 
 **Ahmad**
-GitHub: [@tamim_x0](https://github.com/tamim_x0)
+GitHub: [@ahmad-tamim](https://github.com/ahmad-tamim)
 
 ---
 
 **Quick Links**:
+
 - [VSCode Shortcuts](SHORTCUTS.md)
 - [Terminal Aliases](zsh/aliases.md)
 - [Git Guide](git/git-guide.md)
