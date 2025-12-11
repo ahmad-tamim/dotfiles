@@ -9,6 +9,11 @@
 
   // Custom colors
   "workbench.colorCustomizations": {
+    "tab.activeBackground": "#462a41",
+    "tab.activeBorder": "#440460",
+    "tab.activeBorderTop": "#440460",
+    "tab.inactiveBackground": "#1e1e1e",
+    "tab.hoverBackground": "#252526",
     "editorCursor.foreground": "#00FFFF",
     "editor.lineHighlightBackground": "#ffffff08",
 
