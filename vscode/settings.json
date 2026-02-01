@@ -1,13 +1,10 @@
 {
-  // ============================================
-  // APPEARANCE & THEME
-  // ============================================
-  "workbench.colorTheme": "CodeSandbox",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "One Monokai",
 
-  // Custom colors
+  // ================= UI COLORS =================
   "workbench.colorCustomizations": {
     "tab.activeBackground": "#462a41",
     "tab.activeBorder": "#440460",
@@ -17,16 +14,10 @@
     "editorCursor.foreground": "#00FFFF",
     "editor.lineHighlightBackground": "#ffffff08",
 
-    // Indentation guides
-    "editorIndentGuide.background": "#ffffff15",
-    "editorIndentGuide.activeBackground": "#00FFFF",
-
-    // Bracket highlighting
     "editorBracketHighlight.foreground1": "#00FFFF",
     "editorBracketHighlight.foreground2": "#FF00FF",
     "editorBracketHighlight.foreground3": "#FFFF00",
 
-    // Bracket pair guides
     "editorBracketPairGuide.background1": "#00FFFF30",
     "editorBracketPairGuide.background2": "#FF00FF30",
     "editorBracketPairGuide.background3": "#FFFF0030",
@@ -34,90 +25,84 @@
     "editorBracketPairGuide.activeBackground2": "#FF00FF",
     "editorBracketPairGuide.activeBackground3": "#FFFF00",
 
-    // Other elements
-    "editorRuler.foreground": "#ffffff10",
-    "editor.foldBackground": "#ffffff08",
+    "editorRuler.foreground": "#ffffff00",
+    "editor.foldBackground": "#ffffff00",
+
     "statusBar.background": "#0b0c10",
     "statusBar.noFolderBackground": "#0b0c10",
     "statusBar.debuggingBackground": "#ff00ff"
   },
 
-  // ============================================
-  // EDITOR - FONTS & DISPLAY
-  // ============================================
+  // ================= EDITOR DISPLAY =================
   "editor.fontFamily": "JetBrains Mono, Fira Code, monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
   "editor.lineHeight": 22,
 
-  // Visual block separation
-  "editor.rulers": [80, 120],
-  "editor.guides.bracketPairs": "active",
-  "editor.guides.bracketPairsHorizontal": "active",
-  "editor.guides.highlightActiveIndentation": true,
-  "editor.guides.indentation": true,
-  "editor.stickyScroll.enabled": true,
-  "editor.stickyScroll.maxLineCount": 5,
-  "editor.folding": true,
-  "editor.foldingStrategy": "indentation",
-  "editor.showFoldingControls": "always",
-
-  // Cursor & animations
-  "editor.cursorBlinking": "expand",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.smoothScrolling": true,
-
-  // Visual hints
   "editor.minimap.enabled": false,
-  "editor.bracketPairColorization.enabled": true,
+  "editor.smoothScrolling": true,
+  "editor.wordWrap": "on",
+  "editor.wrappingIndent": "indent",
+
   "editor.renderWhitespace": "selection",
   "editor.renderLineHighlight": "gutter",
   "editor.semanticHighlighting.enabled": true,
   "editor.linkedEditing": true,
 
-  // ============================================
-  // EDITOR - BEHAVIOR & FORMATTING
-  // ============================================
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.autoClosingBrackets": "languageDefined",
+  "editor.autoClosingQuotes": "languageDefined",
+
+  // ================= GUIDES & STRUCTURE =================
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": "active",
+  "editor.guides.highlightActiveIndentation": true,
+  "editor.guides.indentation": true,
+
+  "editor.bracketPairColorization.enabled": true,
+
+  "editor.stickyScroll.enabled": true,
+  "editor.stickyScroll.maxLineCount": 5,
+
+  "editor.folding": true,
+  "editor.foldingStrategy": "indentation",
+  "editor.showFoldingControls": "always",
+
+  // ================= CURSOR =================
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+
+  // ================= FORMATTING =================
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": true,
 
-  // Autocomplete & suggestions
+  // ================= SUGGESTIONS =================
   "editor.quickSuggestions": {
     "strings": true,
     "comments": false,
     "other": true
   },
+  "editor.quickSuggestionsDelay": 10,
   "editor.suggestSelection": "first",
   "editor.acceptSuggestionOnEnter": "on",
   "editor.inlineSuggest.enabled": true,
   "editor.snippetSuggestions": "top",
-
-  // Editing convenience
-  "editor.wordWrap": "on",
-  "editor.wrappingIndent": "indent",
   "editor.hover.delay": 300,
-  "editor.quickSuggestionsDelay": 10,
 
-  // ============================================
-  // FILES & AUTO-SAVE
-  // ============================================
+  // ================= FILES =================
   "files.autoSave": "onFocusChange",
   "files.encoding": "utf8",
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
 
-  // File associations
   "files.associations": {
     "*.json": "jsonc",
     ".env.*": "dotenv"
   },
 
-  // Explorer exclusions
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true,
@@ -129,7 +114,6 @@
     "**/.idea": true
   },
 
-  // File watcher exclusions
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/node_modules/**": true,
@@ -138,9 +122,7 @@
     "**/build/**": true
   },
 
-  // ============================================
-  // TERMINAL
-  // ============================================
+  // ================= TERMINAL =================
   "terminal.integrated.fontFamily": "JetBrains Mono Nerd Font, MesloLGS NF",
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.lineHeight": 1.2,
@@ -152,45 +134,42 @@
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.rightClickBehavior": "paste",
   "terminal.integrated.scrollback": 10000,
-  "terminal.integrated.shell.osx": "/bin/zsh",
   "terminal.integrated.inheritEnv": true,
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
 
-  // ============================================
-  // GIT
-  // ============================================
+  // ================= GIT =================
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
 
-  // ============================================
-  // PYTHON
-  // ============================================
-  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  // ================= PYTHON =================
   "python.createEnvironment.trigger": "off",
-  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.autoFormatStrings": true,
 
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
+      "source.organizeImports": "always"
     }
   },
 
-  // ============================================
-  // JAVASCRIPT / TYPESCRIPT
-  // ============================================
+  // ================= JS / TS =================
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
 
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -199,19 +178,13 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // ============================================
-  // GITHUB COPILOT
-  // ============================================
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": true,
-    "scminput": false
+  // ================= EMMET =================
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
   },
 
-  // ============================================
-  // PERFORMANCE & OPTIMIZATION
-  // ============================================
+  // ================= SEARCH PERF =================
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -224,98 +197,45 @@
     "**/.nuxt": true
   },
 
-  // Editor tabs
+  // ================= TABS =================
   "workbench.editor.enablePreview": false,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 10,
   "workbench.editor.limit.perEditorGroup": true,
 
-  // Explorer
+  // ================= EXPLORER =================
   "explorer.confirmDelete": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.compactFolders": false,
 
-  // Breadcrumbs navigation
+  // ================= BREADCRUMBS =================
   "breadcrumbs.enabled": true,
   "breadcrumbs.filePath": "on",
   "breadcrumbs.symbolPath": "on",
 
-  // Other settings
-  "telemetry.telemetryLevel": "off",
-  "window.enableMenuBarMnemonics": false,
-  "window.customMenuBarAltFocus": false,
+  // ================= EXTENSIONS =================
   "extensions.autoUpdate": true,
   "extensions.ignoreRecommendations": false,
 
-  // ============================================
-  // EMMET
-  // ============================================
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "typescript": "typescriptreact"
+  // ================= TELEMETRY =================
+  "telemetry.telemetryLevel": "off",
+  "window.enableMenuBarMnemonics": false,
+  "window.customMenuBarAltFocus": false,
+
+  // ================= COPILOT (markdown only) =================
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
   },
 
-  // ============================================
-  // BETTER COMMENTS
-  // ============================================
-  "better-comments.tags": [
-    {
-      "tag": "!",
-      "color": "#FF2D00",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "?",
-      "color": "#3498DB",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "//",
-      "color": "#474747",
-      "strikethrough": true,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "todo",
-      "color": "#FF8C00",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    },
-    {
-      "tag": "*",
-      "color": "#98C379",
-      "strikethrough": false,
-      "underline": false,
-      "backgroundColor": "transparent",
-      "bold": false,
-      "italic": false
-    }
-  ],
-  "better-comments.highlightPlainText": true
-
-  // ============================================
-  // INDENT RAINBOW (disabled by default)
-  // ============================================
-  // "indentRainbow.indicatorStyle": "light",
-  // "indentRainbow.lightIndicatorStyleLineWidth": 2,
-  // "indentRainbow.colors": [
-  //   "rgba(64,64,16,0.5)",
-  //   "rgba(32,64,32,0.5)",
-  //   "rgba(64,32,64,0.5)",
-  //   "rgba(16,48,48,0.5)"
-  // ]
+  // ================= CODE RUNNER =================
+  "code-runner.enableAppInsights": false,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "typescript": "ts-node",
+    "python": "./venv/bin/python"
+  }
 }
